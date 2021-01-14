@@ -3,6 +3,7 @@ package com.mj.fooddeliveryapp;
 public class Foodmenu {
     private  String foodname;
     private  String foodimage;
+    private  String price;
     private  int time ;
     private  int distance ;
     private  int foodimage2 ;
@@ -12,11 +13,11 @@ public class Foodmenu {
 
   }
 
-    public Foodmenu(String foodname,String foodimage ,int time, int distance,int foodimage2)
+    public Foodmenu(String foodname,String foodimage ,String price, int time,int foodimage2)
     {
     this.foodname=foodname;
     this.time=time;
-    this.distance=distance;
+    this.price=price;
     this.foodimage=foodimage;
     this.foodimage2=foodimage2;
 
@@ -48,6 +49,14 @@ public class Foodmenu {
 
     public int getTime() {
         return time;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public void setTime(int time) {

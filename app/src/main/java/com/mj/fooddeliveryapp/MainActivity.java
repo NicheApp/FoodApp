@@ -12,7 +12,7 @@ import com.mj.fooddeliveryapp.fragments.FoodAccount;
 import com.mj.fooddeliveryapp.fragments.FoodHome;
 import com.mj.fooddeliveryapp.fragments.Foodcart;
 
-
+import static com.mj.fooddeliveryapp.fragments.FoodHome.restaurantlist;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
         if(savedInstanceState==null)
         {
+            restaurantbackground restaurantbackground=new restaurantbackground(this);
+            restaurantbackground.execute();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FoodHome()).commit();
 
         }
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.food:
+
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FoodHome()).commit();
 
                         return true;

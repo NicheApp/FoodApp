@@ -23,10 +23,10 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolder> implements Filterable {
     public Context mContext;
-    public List<Foodmenu> mUploads;
-    public List<Foodmenu> mUploadscopy;
+    public List<restaurantmodelclass> mUploads;
+    public List<restaurantmodelclass> mUploadscopy;
 
-    public HomeAdapter(Context context, List<Foodmenu> uploads) {
+    public HomeAdapter(Context context, List<restaurantmodelclass> uploads) {
 
         mContext = context;
 
@@ -45,15 +45,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
     @Override
     public void onBindViewHolder(final ImageViewHolder holder, int position) {
 
-        Foodmenu uploadCurrent = mUploads.get(position);
-        holder.foodname.setText(uploadCurrent.getFoodname());
-        holder.foodtime.setText(uploadCurrent.getTime()+"");
-        holder.fooddistance.setText(uploadCurrent.getDistance()+"");
+        restaurantmodelclass uploadCurrent = mUploads.get(position);
+        holder.foodname.setText(uploadCurrent.getRestaurantname());
+        holder.foodtime.setText(uploadCurrent.getDistance()+"");
+        holder.fooddistance.setText(uploadCurrent.getTime()+"");
         /*Picasso.get()
-                .load(uploadCurrent.getFoodimage())
-                .centerCrop()
+                .load(uploadCurrent.getRestaurantimage())
+               .fit().centerCrop()
                 .into(holder.foodimage);*/
-        holder.foodimage.setImageResource(uploadCurrent.getFoodimage2());
+
 
     }
 
@@ -86,13 +86,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
     private  Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            List<Foodmenu> filteredList = new ArrayList<>();
+            List<restaurantmodelclass> filteredList = new ArrayList<>();
             if(constraint ==null || constraint.length()== 0){
                 filteredList.addAll(mUploadscopy);
             } else{
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Foodmenu item : mUploadscopy){
-                    if(item.getFoodname().toLowerCase().contains(filterPattern)){
+                for (restaurantmodelclass item : mUploadscopy){
+                    if(item.getRestaurantname().toLowerCase().contains(filterPattern)){
                         filteredList.add(item);
                     }
                 }

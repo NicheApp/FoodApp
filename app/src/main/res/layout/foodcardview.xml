@@ -4,6 +4,8 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -28,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Food Menu3"
-                    android:textColor="#37AF57"
+                    android:textColor="#0066B1"
                     android:textSize="24dp" />
 
 
@@ -97,7 +99,7 @@
                             android:textColor="#DF6A90B5"
                             android:fontFamily="@font/roboto_regular"
                             android:layout_height="wrap_content"
-                            android:text="Minute" />
+                            android:text="distance(kms)" />
                     </LinearLayout>
 
                     <ImageView
@@ -123,13 +125,13 @@
                             android:textSize="20dp" />
 
                         <TextView
-                            android:layout_gravity="center"
                             android:layout_width="wrap_content"
-                            android:textSize="14dp"
-                            android:textColor="#EE6A90B5"
-                            android:fontFamily="@font/roboto_regular"
                             android:layout_height="wrap_content"
-                            android:text="Nutritions" />
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Time(m)"
+                            android:textColor="#EE6A90B5"
+                            android:textSize="14dp" />
                     </LinearLayout>
 
 
@@ -144,95 +146,14 @@
 
                 <ImageView
                     android:id="@+id/foodimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="130dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="-8dp"
-                    android:src="@drawable/food3" />
+                    android:src="@drawable/resbar" />
             </RelativeLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginLeft="6dp"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/like" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="320 Likes"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textColor="#F06A90B5"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/comment" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="14 Comments"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textColor="#F06A90B5"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/share" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="Share"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textColor="#F06A90B5"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
 
     </LinearLayout>
 

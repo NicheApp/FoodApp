@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.mj.fooddeliveryapp.Foodmenu;
 import com.mj.fooddeliveryapp.HomeAdapter;
 import com.mj.fooddeliveryapp.R;
+import com.mj.fooddeliveryapp.restaurantbackground;
+import com.mj.fooddeliveryapp.restaurantmodelclass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,7 @@ public class FoodHome extends Fragment {
     public RecyclerView recyclerView;
     public HomeAdapter homeAdapter;
     public List<Foodmenu> foodmenuList;
+    public static List<restaurantmodelclass> restaurantlist=new ArrayList<>();
     public static ProgressBar progressBar;
     androidx.appcompat.widget.SearchView searchView;
 
@@ -36,16 +39,18 @@ public class FoodHome extends Fragment {
         View view = inflater.inflate(R.layout.homepage,container,false);
         progressBar=view.findViewById(R.id.searchprogress);
         recyclerView=view.findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         searchView=view.findViewById(R.id.searchbar);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         foodmenuList=new ArrayList<>();
-         foodmenuList.add(new Foodmenu("Chowmein","",20,2,R.drawable.food1));
-        foodmenuList.add(new Foodmenu("food item","",30,3,R.drawable.food2));
-        foodmenuList.add(new Foodmenu("taste me tava","",20,2,R.drawable.food3));
-        foodmenuList.add(new Foodmenu("Chowmein","",20,2,R.drawable.food1));
-        foodmenuList.add(new Foodmenu("food item","",30,3,R.drawable.food2));
-        foodmenuList.add(new Foodmenu("taste me tava","",20,2,R.drawable.food3));
-        homeAdapter=new HomeAdapter(getActivity(),foodmenuList);
+         foodmenuList.add(new Foodmenu("Chowmein","",240+"",20,R.drawable.food1));
+        foodmenuList.add(new Foodmenu("food item","",399+"",30,R.drawable.food2));
+        foodmenuList.add(new Foodmenu("taste me tava","",129+"",20,R.drawable.food3));
+        foodmenuList.add(new Foodmenu("Chowmein","",99+"",20,R.drawable.food1));
+        foodmenuList.add(new Foodmenu("food item","",49+"",30,R.drawable.food2));
+        foodmenuList.add(new Foodmenu("taste me tava","",49+"",20,R.drawable.food3));
+
+        homeAdapter=new HomeAdapter(getActivity(),restaurantlist);
         recyclerView.setAdapter(homeAdapter);
         homeAdapter.notifyDataSetChanged();
         searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
