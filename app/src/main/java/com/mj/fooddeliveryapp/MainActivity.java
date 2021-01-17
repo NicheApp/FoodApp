@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottomBar);
+
         fm = getSupportFragmentManager();
         if(savedInstanceState==null)
         {
