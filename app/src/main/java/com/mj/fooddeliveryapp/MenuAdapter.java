@@ -1,47 +1,52 @@
 package com.mj.fooddeliveryapp;
 
 import android.content.Context;
+import android.content.Intent;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolder> implements Filterable {
+public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ImageViewHolder> {
     public Context mContext;
-    public List<restaurantmodelclass> mUploads;
-    public List<restaurantmodelclass> mUploadscopy;
+    public List<Foodmenu> mUploads;
+    public List<Foodmenu> mUploadscopy;
 
-    public HomeAdapter(Context context, List<restaurantmodelclass> uploads) {
+    public MenuAdapter(Context context, List<Foodmenu> uploads) {
+
         mContext = context;
+
         mUploads = uploads;
         mUploadscopy = new ArrayList<>(mUploads);
+
     }
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.foodcardview, parent, false);
-
-
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.restmenucard, parent, false);
         return new ImageViewHolder(v);
     }
     @Override
     public void onBindViewHolder(final ImageViewHolder holder, int position) {
 
-        restaurantmodelclass uploadCurrent = mUploads.get(position);
-        holder.foodname.setText(uploadCurrent.getRestaurantname());
-        holder.foodtime.setText(uploadCurrent.getDistance()+"");
-        holder.fooddistance.setText(uploadCurrent.getTime()+"");
+        Foodmenu uploadCurrent = mUploads.get(position);
+        holder.foodname.setText(uploadCurrent.getFoodname());
+        holder.price.setText("₹ "+uploadCurrent.getPrice());
         /*Picasso.get()
                 .load(uploadCurrent.getRestaurantimage())
                .fit().centerCrop()
@@ -57,21 +62,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {
         public TextView foodname;
-        public ImageView foodimage;
-        public TextView fooddistance;
-        public  TextView foodtime;
-
+        public ImageView tagimage;
+        public TextView price;
+public ImageButton addimage;
+public ImageView lineimage;
         public ImageViewHolder(View itemView) {
             super(itemView);
-
-            foodname = itemView.findViewById(R.id.foodname);
-            foodimage= itemView.findViewById(R.id.foodimage);
-            fooddistance= itemView.findViewById(R.id.fooddistance);
-           foodtime=itemView.findViewById(R.id.foodtime);
-
+            foodname = itemView.findViewById(R.id.dishname);
+            tagimage= itemView.findViewById(R.id.tag);
+            price= itemView.findViewById(R.id.price);
+            addimage=itemView.findViewById(R.id.ad);
+            lineimage=itemView.findViewById(R.id.line);
         }
     }
-
+/*
     @Override
     public Filter getFilter() {
         return exampleFilter;
@@ -84,7 +88,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
                 filteredList.addAll(mUploadscopy);
             } else{
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (restaurantmodelclass item : mUploadscopy){
+                for (MenuModelclassitem : mUploadscopy){
                     if(item.getRestaurantname().toLowerCase().contains(filterPattern)){
                         filteredList.add(item);
                     }
@@ -101,6 +105,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
             mUploads.addAll((List)results.values);
             notifyDataSetChanged();
         }
+        */
     };
 
-}

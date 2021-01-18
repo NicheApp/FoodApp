@@ -1,6 +1,6 @@
 package com.mj.fooddeliveryapp;
 
-public class restaurantmodelclass {
+public class  restaurantmodelclass {
     private  String restaurantname;
     private  String restaurantimage;
     private  int time ;
