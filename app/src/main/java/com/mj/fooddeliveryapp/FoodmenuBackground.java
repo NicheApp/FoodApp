@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.fragment.app.FragmentManager;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,8 +33,9 @@ import static com.mj.fooddeliveryapp.fragments.FoodHome.restaurantlist;
 public class FoodmenuBackground extends AsyncTask<String,Void,String> {
     Context context;
 
-    public List foodmenuList=new ArrayList<Foodmenu>();
+    public static List<Foodmenu> foodmenuList=new ArrayList<Foodmenu>();
     private  String foodname,foodtype,price;
+    int resid ;
     public FoodmenuBackground(Context ctx)
     {
         context=ctx;
@@ -88,21 +91,17 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
             for(int i=0;i<jsonArray.length();i++)
             {
                 JSONObject obj=jsonArray.getJSONObject(i);
-                if(obj.getString("foodname")==null)
-                    foodname ="";else foodname= obj.getString("foodname");
-                if(obj.getString("foodtype")==null)
-                    foodtype="";else foodtype=obj.getString("foodtype");
-                if(obj.getString("price")==null)
-                    price="";else price=obj.getString("price");
+
                 if(obj.getString("resid")==null)
                     resid=0;else resid=obj.getInt("resid");
 
-
                 foodmenuList.add(new Foodmenu(obj.getString("foodname"),obj.getString("foodtype"),obj.getString("price")));
 
-                Toast.makeText(context,obj.getString("name"),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,obj.getString("foodname"),Toast.LENGTH_SHORT).show();
             }
-
+          //  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
+            //FragmentManager fragmentManager=context.getApplicationContext().get
+//context.getApplicationContext().getSupp
         }catch (Exception e){
 
             Toast.makeText(context,e.toString(),Toast.LENGTH_SHORT).show();

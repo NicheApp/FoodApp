@@ -21,11 +21,12 @@ import com.mj.fooddeliveryapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mj.fooddeliveryapp.FoodmenuBackground.foodmenuList;
+
 
 public class Menuu extends Fragment {
     public RecyclerView recyclerView;
     public MenuAdapter menuAdapter;
-    public List<com.mj.fooddeliveryapp.Foodmenu> foodmenuList;
     public static ProgressBar progressBar;
     androidx.appcompat.widget.SearchView searchView;
 
@@ -39,8 +40,8 @@ public class Menuu extends Fragment {
         searchView=view.findViewById(R.id.accsearchbar);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        FoodmenuBackground foodmenuBackground= new FoodmenuBackground(getContext());
-        foodmenuBackground.execute();
+     //   FoodmenuBackground foodmenuBackground= new FoodmenuBackground(getContext());
+      //  foodmenuBackground.execute();
 
      /*   foodmenuList=new ArrayList<>();
         foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Chowmein",290,"v"));
