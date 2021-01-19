@@ -7,11 +7,11 @@
     android:background="@drawable/mb"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
+    <EditText
+        android:id="@+id/cnt"
         android:layout_width="343dp"
         android:layout_height="62dp"
-        android:layout_marginTop="133dp"
+        android:layout_marginTop="248dp"
         android:background="@drawable/rec"
         android:hint="Contact Number"
         android:textSize="25dp"
@@ -19,14 +19,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="283dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="18dp"
-        android:text="Button"
-
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="343dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="164dp"
+        android:background="@drawable/rec"
+        android:hint="Name"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="269dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="27dp"
+        android:background="#EF8320"
+        android:text="PROCEED"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cnt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

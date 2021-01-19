@@ -28,7 +28,7 @@ public class FoodHome extends Fragment {
 
     public RecyclerView recyclerView;
     public HomeAdapter homeAdapter;
-    public List<Foodmenu> foodmenuList;
+    public List<restaurantmodelclass> foodmenuList;
     public static List<restaurantmodelclass> restaurantlist=new ArrayList<>();
     public static ProgressBar progressBar;
     androidx.appcompat.widget.SearchView searchView;
@@ -44,13 +44,13 @@ public class FoodHome extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        foodmenuList=new ArrayList<>();
-         foodmenuList.add(new Foodmenu("Chowmein","",240+"",20,R.drawable.food1));
-        foodmenuList.add(new Foodmenu("food item","",399+"",30,R.drawable.food2));
-        foodmenuList.add(new Foodmenu("taste me tava","",129+"",20,R.drawable.food3));
-        foodmenuList.add(new Foodmenu("Chowmein","",99+"",20,R.drawable.food1));
-        foodmenuList.add(new Foodmenu("food item","",49+"",30,R.drawable.food2));
-        foodmenuList.add(new Foodmenu("taste me tava","",49+"",20,R.drawable.food3));
+        //foodmenuList=new ArrayList<>();
+        // foodmenuList.add(new restaurantmodelclass("Chowmein","",240+"",20,R.drawable.food1));
+        //foodmenuList.add(new restaurantmodelclass("food item","",399+"",30,R.drawable.food2));
+        //foodmenuList.add(new restaurantmodelclass("taste me tava","",129+"",20,R.drawable.food3));
+        //foodmenuList.add(new restaurantmodelclass("Chowmein","",99+"",20,R.drawable.food1));
+        //foodmenuList.add(new restaurantmodelclass("food item","",49+"",30,R.drawable.food2));
+        //foodmenuList.add(new restaurantmodelclass("taste me tava","",49+"",20,R.drawable.food3));
 
         homeAdapter=new HomeAdapter(getActivity(),restaurantlist);
         recyclerView.setAdapter(homeAdapter);
