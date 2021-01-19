@@ -15,7 +15,7 @@ public class Foodmenu {
     this.foodname=foodname;
     this.foodtype=foodtype;
     this.price=price;
-this.resid=resid;
+    this.resid=resid;
     }
 
     public void setPrice(String price) {
