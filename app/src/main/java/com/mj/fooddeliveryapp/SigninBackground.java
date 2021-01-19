@@ -36,8 +36,8 @@ public class SigninBackground extends AsyncTask<String,Void,String> {
     }
     @Override
     protected String doInBackground(String... voids) {
-
-        String login_url= "http://192.168.43.221/registration.php";
+        String login_url= "http://192.168.43.201/food/registration.php";
+       // String login_url= "http://192.168.43.221/registration.php";
         try {
             name= voids[0];
             mobile=voids[1];
@@ -81,6 +81,8 @@ public class SigninBackground extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         Toast.makeText(context,result,Toast.LENGTH_LONG).show();
+        restaurantbackground restaurantbackground=new restaurantbackground(context);
+        restaurantbackground.execute();
         Intent intent = new Intent(context,MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);

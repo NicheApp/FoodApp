@@ -1,17 +1,23 @@
 package com.mj.fooddeliveryapp;
 
 import android.content.Context;
+import android.content.Intent;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +29,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
     public List<restaurantmodelclass> mUploadscopy;
 
     public HomeAdapter(Context context, List<restaurantmodelclass> uploads) {
+
         mContext = context;
+
         mUploads = uploads;
         mUploadscopy = new ArrayList<>(mUploads);
+
     }
 
     @Override
@@ -42,11 +51,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
         holder.foodname.setText(uploadCurrent.getRestaurantname());
         holder.foodtime.setText(" • "+uploadCurrent.getDistance()+"mins");
         holder.fooddistance.setText(" • "+uploadCurrent.getTime()+"kms");
-       /* Picasso.get()
+        Picasso.get()
                 .load(uploadCurrent.getRestaurantimage())
-               .fit().centerCrop()
-                .into(holder.foodimage);*/
-        holder.foodimage.setBackgroundResource(R.drawable.resbar);
+                .into(holder.foodimage);
+        //  holder.foodimage.setBackgroundResource(R.drawable.resbar);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, position+"", Toast.LENGTH_SHORT).show();
+
+              FoodmenuBackground foodmenuBackground =new FoodmenuBackground(mContext);
+                foodmenuBackground.execute(1+"");
+            }
+        });
 
 
     }
@@ -61,6 +78,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
         public ImageView foodimage;
         public TextView fooddistance;
         public  TextView foodtime;
+        public CardView cardView;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
@@ -68,7 +86,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
             foodname = itemView.findViewById(R.id.restaurantNameTV);
             foodimage= itemView.findViewById(R.id.shopIconIV);
             fooddistance= itemView.findViewById(R.id.distance);
-           foodtime=itemView.findViewById(R.id.time);
+            foodtime=itemView.findViewById(R.id.time);
+            cardView=itemView.findViewById(R.id.rescard);
+
 
         }
     }

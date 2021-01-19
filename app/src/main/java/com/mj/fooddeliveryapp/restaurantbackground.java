@@ -85,6 +85,7 @@ public class restaurantbackground extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
+
         Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
         try {
             int time=0;
@@ -103,10 +104,10 @@ public class restaurantbackground extends AsyncTask<String,Void,String> {
                       resid=0;else resid=obj.getInt("resid");
 
 
-                 restaurantlist.add(new restaurantmodelclass(obj.getString("name"),"https://drive.google.com/file/d/16E8-noAMtuCvpPq0VDFheCJ4z415eeG6/view?usp=sharing",
+                 restaurantlist.add(new restaurantmodelclass(obj.getString("name"),obj.getString("resimage"),
                          time,distance,resid,5));
 
-                 Toast.makeText(context,obj.getString("name"),Toast.LENGTH_SHORT).show();
+
              }
 
         }catch (Exception e){

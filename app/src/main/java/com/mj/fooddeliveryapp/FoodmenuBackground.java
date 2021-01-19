@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.FragmentManager;
 
+import com.mj.fooddeliveryapp.fragments.Menuu;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,6 +29,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mj.fooddeliveryapp.MainActivity.fm;
 import static com.mj.fooddeliveryapp.fragments.FoodHome.restaurantlist;
 
 
@@ -44,7 +47,8 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... voids) {
 
-        String login_url= "http://192.168.43.221/retrieve.php";
+       // String login_url= "http://192.168.43.221/retrieve.php";
+        String login_url= "http://192.168.43.201/food/retrieve2.php";
         try {
 
 
@@ -53,6 +57,14 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
+
+            OutputStream outputStream=httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+            String post_data= URLEncoder.encode("resid","UTF-8")+"="+URLEncoder.encode(voids[0],"UTF-8");
+            bufferedWriter.write(post_data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            outputStream.close();
 
             InputStream inputStream=httpURLConnection.getInputStream();
             BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
@@ -95,12 +107,13 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
                 if(obj.getString("resid")==null)
                     resid=0;else resid=obj.getInt("resid");
 
-                foodmenuList.add(new Foodmenu(obj.getString("foodname"),obj.getString("foodtype"),obj.getString("price")));
+                foodmenuList.add(new Foodmenu(obj.getString("foodname"),obj.getString("price"),obj.getString("foodtype")));
 
                 Toast.makeText(context,obj.getString("foodname"),Toast.LENGTH_SHORT).show();
             }
           //  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
             //FragmentManager fragmentManager=context.getApplicationContext().get
+            fm.beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
 //context.getApplicationContext().getSupp
         }catch (Exception e){
 
