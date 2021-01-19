@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +40,8 @@ public class FoodHome extends Fragment {
         View view = inflater.inflate(R.layout.homepage,container,false);
         progressBar=view.findViewById(R.id.searchprogress);
         recyclerView=view.findViewById(R.id.recyclerview);
-        searchView=view.findViewById(R.id.searchbar);
+       // Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //foodmenuList=new ArrayList<>();
@@ -53,7 +55,7 @@ public class FoodHome extends Fragment {
         homeAdapter=new HomeAdapter(getActivity(),restaurantlist);
         recyclerView.setAdapter(homeAdapter);
         homeAdapter.notifyDataSetChanged();
-        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+      /*  searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -65,7 +67,7 @@ public class FoodHome extends Fragment {
                 return false;
             }
 
-        });
+        });*/
 
 
         return  view;

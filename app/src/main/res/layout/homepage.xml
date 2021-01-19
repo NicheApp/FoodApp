@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9B361"
+    android:background="#FFFFFF"
 
     tools:context=".MainActivity">
 
@@ -20,40 +20,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_location"
+>
 
+        </ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bolditalic"
-            android:text="Food"
-            android:textColor="@color/redapp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Home"
+            android:textColor="#7A7C88"
             android:textSize="24dp"
 
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:fontFamily="@font/roboto_bolditalic"
-            android:text="Point"
-            android:textColor="#0066B1"
-            android:textSize="24dp"
-
-            />
 
 
     </LinearLayout>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:fontFamily="@font/roboto_regular"
+       android:text="153/10 Shiv Nagar Colony,Modipuram,Meerut">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchbar"
-            app:iconifiedByDefault="false"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            app:queryHint="Search your restaurant"
-            android:layout_marginRight="20dp"
-            android:elevation="2dp"
-            android:background="@drawable/searchbackground"/>
+   </TextView>
+
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/collegeIconIV"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/fastfood" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/resNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Main Canteen"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:id="@+id/resAddTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ssn College of Engineering"
+                    android:textSize="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/cartLV"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fadeScrollbars="false"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/myborder"></ListView>
+
+        <EditText
+            android:id="@+id/cookingInfoET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_rest_req"
+            android:hint="Any restaurant request? We will try our best to convey"
+            android:lines="2"
+            android:outlineProvider="none"
+            android:padding="@dimen/_5sdp"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:id="@+id/greyRL"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#EFEFEF" />
+
+        <TextView
+            android:id="@+id/bilDetailsTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:text="Bill Details"
+            android:textColor="#000"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/itemTotalTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="Item Total" />
+
+            <TextView
+                android:id="@+id/itemCostTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="₹100"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/deliveryFeeTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="Delivery Fee" />
+
+            <TextView
+                android:id="@+id/delFeeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="₹10"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/toPayRL"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginBottom="-2dp"
+            android:background="#efefef" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="To Pay"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/totalPayTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="₹110"
+                android:textAlignment="textEnd"
+                android:textColor="#000" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/orderStatusRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/deliveryRB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery"
+                    android:textSize="@dimen/_15ssp" />
+
+                <RadioButton
+                    android:id="@+id/pickUpRB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pick-Up"
+                    android:textSize="@dimen/_15ssp" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/deliveryLocationET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/myborder"
+                android:hint="Delivery Location"
+                android:maxLines="2"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/clearOrderBT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clearorderbackground"
+                android:text="Clear Order"
+                android:textColor="#F9B361" />
+
+            <Button
+                android:id="@+id/placeOrderBT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/placeorder"
+                android:text="Place Order"
+                android:textColor="#FFFFFF" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

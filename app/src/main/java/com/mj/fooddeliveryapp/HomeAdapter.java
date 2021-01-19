@@ -30,7 +30,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.foodcardview, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.restaurantcard, parent, false);
 
 
         return new ImageViewHolder(v);
@@ -40,12 +40,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
 
         restaurantmodelclass uploadCurrent = mUploads.get(position);
         holder.foodname.setText(uploadCurrent.getRestaurantname());
-        holder.foodtime.setText(uploadCurrent.getDistance()+"");
-        holder.fooddistance.setText(uploadCurrent.getTime()+"");
-        /*Picasso.get()
+        holder.foodtime.setText(" • "+uploadCurrent.getDistance()+"mins");
+        holder.fooddistance.setText(" • "+uploadCurrent.getTime()+"kms");
+       /* Picasso.get()
                 .load(uploadCurrent.getRestaurantimage())
                .fit().centerCrop()
                 .into(holder.foodimage);*/
+        holder.foodimage.setBackgroundResource(R.drawable.resbar);
 
 
     }
@@ -64,10 +65,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
         public ImageViewHolder(View itemView) {
             super(itemView);
 
-            foodname = itemView.findViewById(R.id.foodname);
-            foodimage= itemView.findViewById(R.id.foodimage);
-            fooddistance= itemView.findViewById(R.id.fooddistance);
-           foodtime=itemView.findViewById(R.id.foodtime);
+            foodname = itemView.findViewById(R.id.restaurantNameTV);
+            foodimage= itemView.findViewById(R.id.shopIconIV);
+            fooddistance= itemView.findViewById(R.id.distance);
+           foodtime=itemView.findViewById(R.id.time);
 
         }
     }
