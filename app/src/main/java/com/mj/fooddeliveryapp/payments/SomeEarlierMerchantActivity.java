@@ -49,7 +49,6 @@ private  String number,name,address,orderid,restaurantid,restaurant;
                     orderRequest.put("name", "Merchant Name");
                     orderRequest.put("description", "Reference No. #123456");
                     orderRequest.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-                    orderRequest.put("theme.color", "#3399cc");
                     orderRequest.put("currency", "INR");
                     orderRequest.put("amount", "100");//pass amount in currency subunits
                     orderRequest.put("prefill.email", "gaurav.kumar@example.com");

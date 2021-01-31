@@ -9,6 +9,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mj.fooddeliveryapp.fragments.FoodAccount;
 import com.mj.fooddeliveryapp.fragments.FoodHome;
@@ -19,14 +24,22 @@ import static com.mj.fooddeliveryapp.fragments.FoodHome.restaurantlist;
 
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigation;
+   public static BottomNavigationView bottomNavigation;
     public  static  FragmentManager fm;
+    public static FrameLayout frameLayout;
+    public  static TextView items;
+    public  static LinearLayout placeorclear;
+    public  static Button placeorder,clearorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottomBar);
-
+        frameLayout=findViewById(R.id.gototcart);
+        items=findViewById(R.id.items);
+        placeorclear=findViewById(R.id.placeorderlayout);
+        placeorder=findViewById(R.id.placeOrderBT);
+        clearorder=findViewById(R.id.clearOrderBT);
         fm = getSupportFragmentManager();
         if(savedInstanceState==null)
         {
@@ -46,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
                         return true;
                     case R.id.cart:
-                        Intent intent =new Intent(MainActivity.this,SomeEarlierMerchantActivity.class);
-                        startActivity(intent);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Foodcart()).commit();
+                       // Intent intent =new Intent(MainActivity.this,SomeEarlierMerchantActivity.class);
+                        //startActivity(intent);
                       //  SomeEarlierMerchantActivity someEarlierMerchantActivity=new SomeEarlierMerchantActivity(2,"7668693024","Nishkarsh","12", "modipuram","123","dominos");
                       //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Foodcart()).commit();
                         return true;

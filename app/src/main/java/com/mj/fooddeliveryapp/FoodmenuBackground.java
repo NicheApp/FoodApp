@@ -92,7 +92,7 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context,result,Toast.LENGTH_LONG).show();
+       // Toast.makeText(context,result,Toast.LENGTH_LONG).show();
         try {
             String foodname="";
             String foodtype="";
@@ -109,7 +109,7 @@ public class FoodmenuBackground extends AsyncTask<String,Void,String> {
 
                 foodmenuList.add(new Foodmenu(obj.getString("foodname"),obj.getString("price"),obj.getString("foodtype")));
 
-                Toast.makeText(context,obj.getString("foodname"),Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context,obj.getString("foodname"),Toast.LENGTH_SHORT).show();
             }
           //  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
             //FragmentManager fragmentManager=context.getApplicationContext().get

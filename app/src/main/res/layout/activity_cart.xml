@@ -198,33 +198,7 @@
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:padding="10dp">
 
-            <Button
-                android:id="@+id/clearOrderBT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/clearorderbackground"
-                android:text="Clear Order"
-                android:textColor="#F9B361" />
-
-            <Button
-                android:id="@+id/placeOrderBT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/placeorder"
-                android:text="Place Order"
-                android:textColor="#FFFFFF" />
-
-
-        </LinearLayout>
 
     </LinearLayout>
 

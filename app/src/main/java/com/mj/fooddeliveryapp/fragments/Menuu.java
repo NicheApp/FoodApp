@@ -1,10 +1,12 @@
 package com.mj.fooddeliveryapp.fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +30,8 @@ public class Menuu extends Fragment {
     public RecyclerView recyclerView;
     public MenuAdapter menuAdapter;
     public static ProgressBar progressBar;
+    public   Activity activity;
+
     androidx.appcompat.widget.SearchView searchView;
 
 
@@ -38,6 +42,8 @@ public class Menuu extends Fragment {
         progressBar=view.findViewById(R.id.accsearchprogress);
         recyclerView=view.findViewById(R.id.accrecyclerview);
         searchView=view.findViewById(R.id.accsearchbar);
+
+        activity=getActivity();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
      //   FoodmenuBackground foodmenuBackground= new FoodmenuBackground(getContext());
@@ -51,7 +57,7 @@ public class Menuu extends Fragment {
         foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Pasta",290,"v"));
 */
 
-       menuAdapter= new MenuAdapter(getActivity(),foodmenuList);
+       menuAdapter= new MenuAdapter(getActivity(),foodmenuList,activity);
         recyclerView.setAdapter(menuAdapter);
         menuAdapter.notifyDataSetChanged();
     /*    searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {

@@ -2,13 +2,17 @@ package com.mj.fooddeliveryapp;
 
 public class cartmodel {
     private String foodname;
-    private int foodprice;
+    public int foodprice;
     public String address;
-    public cartmodel(String foodname,int foodprice,String address)
+    public  int times;
+    public  String foodtype;
+    public cartmodel(String foodname,int foodprice,String address,int times,String foodtype)
     {
         this.foodname=foodname;
         this.foodprice=foodprice;
         this.address=address;
+        this.times=times;
+        this.foodtype=foodtype;
     }
 
     public String getFoodname() {
@@ -29,6 +33,22 @@ public class cartmodel {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getFoodtype() {
+        return foodtype;
+    }
+
+    public void setFoodtype(String foodtype) {
+        this.foodtype = foodtype;
+    }
+
+    public int getTimes() {
+        return times;
+    }
+
+    public void setTimes(int times) {
+        this.times = times;
     }
 
     public void setAddress(String address) {

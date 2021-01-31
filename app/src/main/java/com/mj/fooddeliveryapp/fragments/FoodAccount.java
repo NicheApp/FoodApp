@@ -45,12 +45,13 @@ Button save;
            save = view.findViewById(R.id.save);
 
         SharedPreferences prefs=getActivity().getSharedPreferences("MyPref",MODE_PRIVATE);
-        name.setText(prefs.getString("key_name", "name"));
-        mb.setText(prefs.getString("key_mobile", "mobile"));
-        email.setText(prefs.getString("key_email", "email"));
-        area.setText(prefs.getString("key_area", "area"));
-        city.setText(prefs.getString("key_city", "city"));
-        state.setText(prefs.getString("key_state", "state"));
+        name.setText(prefs.getString("key_name", "0"));
+        mb.setText(prefs.getString("key_mobile", "0"));
+        if(prefs.contains("key_email")  && prefs.contains("key_area") &&prefs.contains("key_city")&&prefs.contains("key_state")){
+        email.setText(prefs.getString("key_email", "0"));
+        area.setText(prefs.getString("key_area", "0"));
+        city.setText(prefs.getString("key_city", "0"));
+        state.setText(prefs.getString("key_state", "0"));}
            save.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
@@ -74,7 +75,7 @@ Button save;
                    AccntBackground accntBackground= new AccntBackground(getContext());
                    accntBackground.execute(useremail,userarea,usercity,userstate,usermobile,username);
 
-                 // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
+                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
 
                }
            });

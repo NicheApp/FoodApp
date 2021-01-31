@@ -86,7 +86,7 @@ public class restaurantbackground extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
 
-        Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
         try {
             int time=0;
             double distance=0;

@@ -17,17 +17,23 @@ public class Signin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin);
-        name = findViewById(R.id.name);
+
+        SharedPreferences prefs = this.getSharedPreferences("MyPref", MODE_PRIVATE);
+        if (prefs.contains("key_mobile")) {
+            startActivity(new Intent(this,MainActivity.class));
+        } else
+        {
+            setContentView(R.layout.signin);
+            name = findViewById(R.id.name);
         mobile = findViewById(R.id.cnt);
         proceed = findViewById(R.id.button2);
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username=name.getText().toString();
-                String usermobile=mobile.getText().toString();
-                SigninBackground signinBackground= new SigninBackground(getApplicationContext());
-                signinBackground.execute(username,usermobile);
+                String username = name.getText().toString();
+                String usermobile = mobile.getText().toString();
+                SigninBackground signinBackground = new SigninBackground(getApplicationContext());
+                signinBackground.execute(username, usermobile);
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("key_name", username);
@@ -35,5 +41,6 @@ public class Signin extends AppCompatActivity {
                 editor.commit();
             }
         });
+    }
     }
 }

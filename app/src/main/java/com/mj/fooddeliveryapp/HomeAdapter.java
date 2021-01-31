@@ -61,7 +61,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
                 Toast.makeText(mContext, position+"", Toast.LENGTH_SHORT).show();
 
               FoodmenuBackground foodmenuBackground =new FoodmenuBackground(mContext);
-                foodmenuBackground.execute(1+"");
+                foodmenuBackground.execute(uploadCurrent.getResid()+"");
             }
         });
 
