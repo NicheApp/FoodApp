@@ -37,9 +37,9 @@ public class AccntBackground extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... voids) {
 
-        //String login_url= "http://192.168.43.221/Accnt.php";
+       String login_url= "http://192.168.43.221/Accnt.php";
 
-        String login_url= "http://192.168.43.201/food/Accnt.php";
+      //  String login_url= "http://192.168.43.201/food/Accnt.php";
         try {
             email= voids[0];
             area=voids[1];

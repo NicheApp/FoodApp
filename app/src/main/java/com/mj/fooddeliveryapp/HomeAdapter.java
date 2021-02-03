@@ -27,6 +27,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
     public Context mContext;
     public List<restaurantmodelclass> mUploads;
     public List<restaurantmodelclass> mUploadscopy;
+    private OnItemClickListener mListener;
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public HomeAdapter(Context context, List<restaurantmodelclass> uploads) {
 
@@ -58,12 +65,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, position+"", Toast.LENGTH_SHORT).show();
-
-              FoodmenuBackground foodmenuBackground =new FoodmenuBackground(mContext);
+                Toast.makeText(mContext, "4646", Toast.LENGTH_SHORT).show();
+                FoodmenuBackground foodmenuBackground =new FoodmenuBackground(mContext);
                 foodmenuBackground.execute(1+"");
             }
         });
+
 
 
     }
@@ -88,6 +95,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
             fooddistance= itemView.findViewById(R.id.distance);
             foodtime=itemView.findViewById(R.id.time);
             cardView=itemView.findViewById(R.id.rescard);
+
 
 
         }

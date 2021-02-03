@@ -20,8 +20,8 @@ import com.mj.fooddeliveryapp.R;
 import com.mj.fooddeliveryapp.cartmodel;
 import com.mj.fooddeliveryapp.restaurantbackground;
 import com.mj.fooddeliveryapp.writedata;
-import com.razorpay.Checkout;
-import com.razorpay.PaymentResultListener;
+//import com.razorpay.Checkout;
+//import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;

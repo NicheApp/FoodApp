@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ import static android.content.Context.MODE_PRIVATE;
 //Hellp therre again merge again
 public class FoodAccount  extends Fragment {
 EditText name,mb,email,area,city,state;
+ImageView mb1,email1,area1,city1,state1;
 Button save;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.account, container, false);
@@ -43,6 +45,14 @@ Button save;
            city = view.findViewById(R.id.city);
            state = view.findViewById(R.id.state);
            save = view.findViewById(R.id.save);
+
+        mb1 = view.findViewById(R.id.imageView);
+        email1 = view.findViewById(R.id.imageView1);
+        area1 = view.findViewById(R.id.imageView2);
+        city1 = view.findViewById(R.id.imageView3);
+        state1 = view.findViewById(R.id.imageView4);
+
+
 
         SharedPreferences prefs=getActivity().getSharedPreferences("MyPref",MODE_PRIVATE);
         name.setText(prefs.getString("key_name", "name"));

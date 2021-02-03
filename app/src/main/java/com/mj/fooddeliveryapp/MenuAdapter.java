@@ -65,14 +65,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ImageViewHolde
         public ImageView tagimage;
         public TextView price;
 public ImageButton addimage;
-public ImageView lineimage;
+
         public ImageViewHolder(View itemView) {
             super(itemView);
             foodname = itemView.findViewById(R.id.dishname);
             tagimage= itemView.findViewById(R.id.tag);
             price= itemView.findViewById(R.id.price);
             addimage=itemView.findViewById(R.id.ad);
-            lineimage=itemView.findViewById(R.id.line);
+
         }
     }
 /*

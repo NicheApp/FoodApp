@@ -29,8 +29,8 @@
             android:background="@color/white"
             android:elevation="4dp"
 
-            app:itemIconTint="#F9B361"
-            app:itemTextColor="#F9B361"
+            app:itemIconTint="@color/black"
+            app:itemTextColor="@color/black"
             app:menu="@menu/bottom_menu" />
     </RelativeLayout>
 

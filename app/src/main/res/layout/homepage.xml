@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-
+    android:background="#F5F5F7"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,8 +20,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_location"
 >
 
@@ -33,7 +32,7 @@
             android:fontFamily="@font/roboto_bold"
             android:text="Home"
             android:textColor="#7A7C88"
-            android:textSize="24dp"
+            android:textSize="20dp"
 
             />
 
@@ -48,11 +47,28 @@
 
    </TextView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/lobster_two"
+            android:text="The Best Restraunts"
+            android:textColor="@color/black"
+            android:textSize="40dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lobster_two"
+            android:text="In Your City ....."
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:textSize="20dp"></TextView>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="170dp"
 
         android:id="@+id/recyclerview"
         >

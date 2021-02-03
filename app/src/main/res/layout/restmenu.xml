@@ -5,29 +5,47 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#F5F5F7">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp">
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/lobster_two_bold"
+            android:text="Items in your cart"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Main Dishes"
+            android:textColor="#717070"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lobster_two_bold"
+            android:layout_marginLeft="10dp"/>
         <androidx.appcompat.widget.SearchView
             android:id="@+id/accsearchbar"
             app:iconifiedByDefault="false"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             app:queryHint="Search your food"
             android:layout_marginRight="20dp"
-            android:elevation="2dp"
-            android:background="@drawable/searchbackground"/>
+           />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="130dp"
         android:id="@+id/accrecyclerview"
         >
 
