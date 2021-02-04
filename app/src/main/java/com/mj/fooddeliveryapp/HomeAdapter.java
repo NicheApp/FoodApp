@@ -55,6 +55,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
                 .load(uploadCurrent.getRestaurantimage())
                 .into(holder.foodimage);
         //  holder.foodimage.setBackgroundResource(R.drawable.resbar);
+//       holder.cardView.setOnClickListener((View.OnClickListener) mContext);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +89,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
             fooddistance= itemView.findViewById(R.id.distance);
             foodtime=itemView.findViewById(R.id.time);
             cardView=itemView.findViewById(R.id.rescard);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext, "fsd", Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
         }

@@ -46,17 +46,6 @@ public class Menuu extends Fragment {
         activity=getActivity();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-     //   FoodmenuBackground foodmenuBackground= new FoodmenuBackground(getContext());
-      //  foodmenuBackground.execute();
-
-     /*   foodmenuList=new ArrayList<>();
-        foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Chowmein",290,"v"));
-        foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Momoz",290,"v"));
-        foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Pizza",290,"v"));
-        foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Burger",290,"v"));
-        foodmenuList.add(new com.mj.fooddeliveryapp.Foodmenu("Pasta",290,"v"));
-*/
-
        menuAdapter= new MenuAdapter(getActivity(),foodmenuList,activity);
         recyclerView.setAdapter(menuAdapter);
         menuAdapter.notifyDataSetChanged();

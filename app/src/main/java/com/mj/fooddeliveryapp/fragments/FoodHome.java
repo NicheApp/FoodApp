@@ -38,7 +38,7 @@ public class FoodHome extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.homepage,container,false);
-        progressBar=view.findViewById(R.id.searchprogress);
+
         recyclerView=view.findViewById(R.id.recyclerview);
        // Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 

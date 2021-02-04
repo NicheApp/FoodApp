@@ -181,7 +181,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ImageViewHolde
             tagimage= itemView.findViewById(R.id.tag);
             price= itemView.findViewById(R.id.price);
             addimage=itemView.findViewById(R.id.ad);
-            lineimage=itemView.findViewById(R.id.line);
+           // lineimage=itemView.findViewById(R.id.line);
             numberButtonENB = itemView.findViewById(R.id.numberButtonENB);
             numberButtonENB.setRange(0, 10);
         }

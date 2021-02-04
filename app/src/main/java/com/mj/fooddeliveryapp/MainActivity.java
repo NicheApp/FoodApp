@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
                         return true;
                     case R.id.cart:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Foodcart()).commit();
-                       // Intent intent =new Intent(MainActivity.this,SomeEarlierMerchantActivity.class);
-                        //startActivity(intent);
+                       // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Foodcart()).commit();
+                        Intent intent =new Intent(MainActivity.this,SomeEarlierMerchantActivity.class);
+                        startActivity(intent);
                       //  SomeEarlierMerchantActivity someEarlierMerchantActivity=new SomeEarlierMerchantActivity(2,"7668693024","Nishkarsh","12", "modipuram","123","dominos");
                       //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Foodcart()).commit();
                         return true;

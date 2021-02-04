@@ -68,7 +68,7 @@ private String URL = "https://fcm.googleapis.com/fcm/send";
             String usercity=prefs.getString("key_area","0");
             String userstate=prefs.getString("key_city","0");
 
-            if(!(username.equals("0")) && !(usermobile.equals("0"))
+           if(!(username.equals("0")) && !(usermobile.equals("0"))
                     &&!(useremail.equals("0"))&& !(userarea.equals("0")) && !(usercity.equals("0")&& !(userstate.equals("0"))))
             {
 
@@ -83,9 +83,9 @@ private String URL = "https://fcm.googleapis.com/fcm/send";
                 orderRequest.put("prefill.contact", usermobile);
 
                 checkout.open(this, orderRequest);
-            }
-            else
-            {
+           }
+           else
+               {
                 Toast.makeText(this, "please complete your profile to proceed", Toast.LENGTH_SHORT).show();
 
             }
@@ -100,10 +100,11 @@ private String URL = "https://fcm.googleapis.com/fcm/send";
 
         JSONObject json = new JSONObject();
         try {
-            json.put("to","/topics/"+"news");
+            json.put("to","/topics/"+"yes");
             JSONObject notificationObj = new JSONObject();
             notificationObj.put("title","");
             notificationObj.put("body","any body");
+            notificationObj.put("sound",R.raw.tmobile_wav);
 
             JSONObject extraData = new JSONObject();
             extraData.put("brandId","puma");
