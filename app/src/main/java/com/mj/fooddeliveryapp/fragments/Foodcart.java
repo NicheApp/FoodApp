@@ -48,6 +48,7 @@ public class Foodcart extends Fragment {
     cartitemadapter  cartitemadapter;
     TextView cartitemtotal,deliveryfee, totaltopayl;
     private int totalitem=0;
+    String fooditems="";
 public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_cart, container, false);
         cartitemtotal=view.findViewById(R.id.itemCostTV);
@@ -64,8 +65,11 @@ public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup c
     cartitemadapter= new cartitemadapter(getContext(), R.layout.order_items, cart);
     fooditemlist.setAdapter(cartitemadapter);
     int delivery=10;
+
     for(int i=0;i<cart.size();i++)
-        totalitem+=(cart.get(i).getFoodprice())*(cart.get(i).getTimes());
+    { totalitem+=(cart.get(i).getFoodprice())*(cart.get(i).getTimes());
+    fooditems+=cart.get(i).getFoodname()+",";
+    }
          cartitemtotal.setText("₹"+totalitem);
          deliveryfee.setText("₹"+delivery);
          totalitem+=delivery;
@@ -75,6 +79,7 @@ public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup c
              @Override
              public void onClick(View v) {
                  Intent intent =new Intent(getContext(),SomeEarlierMerchantActivity.class);
+                intent.putExtra("fooditems",fooditems);
                  intent.putExtra("totalitem",totalitem);
                  startActivity(intent);
              }

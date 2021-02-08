@@ -28,6 +28,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
     public List<restaurantmodelclass> mUploads;
     public List<restaurantmodelclass> mUploadscopy;
 
+public static  String resname;
     public HomeAdapter(Context context, List<restaurantmodelclass> uploads) {
 
         mContext = context;
@@ -60,7 +61,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ImageViewHolde
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, position+"", Toast.LENGTH_SHORT).show();
-
+                  resname = mUploads.get(position).getRestaurantname();
               FoodmenuBackground foodmenuBackground =new FoodmenuBackground(mContext);
                 foodmenuBackground.execute(uploadCurrent.getResid()+"");
             }

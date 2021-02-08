@@ -36,8 +36,8 @@ public class SigninBackground extends AsyncTask<String,Void,String> {
     }
     @Override
     protected String doInBackground(String... voids) {
-        String login_url= "http://192.168.43.201/food/registration.php";
-       // String login_url= "http://192.168.43.221/registration.php";
+       // String login_url= "http://192.168.43.201/food/registration.php";
+        String login_url= "http://192.168.43.221/registration.php";
         try {
             name= voids[0];
             mobile=voids[1];

@@ -19,36 +19,67 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mj.fooddeliveryapp.Databackground;
 import com.mj.fooddeliveryapp.R;
+import com.mj.fooddeliveryapp.fragments.FoodAccount;
+import com.mj.fooddeliveryapp.fragments.Menuu;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.mj.fooddeliveryapp.HomeAdapter.resname;
+import static com.mj.fooddeliveryapp.MainActivity.fm;
 
 public class SomeEarlierMerchantActivity extends AppCompatActivity implements PaymentResultListener {
 public  Checkout checkout;
 private String apikey="rzp_test_Co9x9bXWjcvd0K";
 private RequestQueue mRequestQue;
 private String URL = "https://fcm.googleapis.com/fcm/send";
+public String fooditm;
+public   int totalitem;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account);
         checkout=new Checkout();
         checkout.setKeyID(apikey);
         Intent intent = getIntent();
-       int totalitem=intent.getIntExtra("totalitem",20);
+       totalitem=intent.getIntExtra("totalitem",20);
+       fooditm = intent.getStringExtra("fooditems");
         mRequestQue = Volley.newRequestQueue(this);
         dopayment(totalitem);
     }
 
     @Override
     public void onPaymentSuccess(String s) {
+        try{
+        Calendar cal = Calendar.getInstance();
+        String dt1 = cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE);
+        SharedPreferences prefs=this.getSharedPreferences("MyPref",MODE_PRIVATE);
+        String username =prefs.getString("key_name","0");
+        String usermobile=prefs.getString("key_mobile","0");
+        String useremail= prefs.getString("key_email","0");
+        String userarea =prefs.getString("key_area","0");
+        String usercity=prefs.getString("key_city","0");
+        String userstate=prefs.getString("key_state","0");
+        String userlatitude=prefs.getString("latitude","0");
+        String userlongitude=prefs.getString("longitude","0");
+
+        String last4=""+usermobile.charAt(6)+usermobile.charAt(7)+usermobile.charAt(8)+usermobile.charAt(9) + cal.get(Calendar.YEAR)+ cal.get(Calendar.MONTH)+ cal.get(Calendar.DAY_OF_MONTH)+cal.get(Calendar.HOUR_OF_DAY)+cal.get(Calendar.SECOND);
+        Databackground dt = new Databackground(this);
+        dt.execute(last4,username,usermobile,useremail,userarea+","+usercity+","+userstate,userlatitude,userlongitude,resname,fooditm, String.valueOf(totalitem),"COD",dt1, "Not updated","0","Anonymous");
         sendNotification();
+            fm.beginTransaction().replace(R.id.fragment_container,new Menuu()).commit();
+        }
+        catch (Exception e){Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show();}
 
     }
 
@@ -64,9 +95,9 @@ private String URL = "https://fcm.googleapis.com/fcm/send";
             String username =prefs.getString("key_name","0");
             String usermobile=prefs.getString("key_mobile","0");
             String useremail= prefs.getString("key_email","0");
-            String userarea =prefs.getString("key_name","0");
-            String usercity=prefs.getString("key_area","0");
-            String userstate=prefs.getString("key_city","0");
+            String userarea =prefs.getString("key_area","0");
+            String usercity=prefs.getString("key_city","0");
+            String userstate=prefs.getString("key_state","0");
 
            if(!(username.equals("0")) && !(usermobile.equals("0"))
                     &&!(useremail.equals("0"))&& !(userarea.equals("0")) && !(usercity.equals("0")&& !(userstate.equals("0"))))

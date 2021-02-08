@@ -37,8 +37,8 @@ public class restaurantbackground extends AsyncTask<String,Void,String> {
     }
     @Override
     protected String doInBackground(String... voids) {
-      //  String login_url= "http://192.168.43.221/retrieve1.php";
-        String login_url= "http://192.168.43.201/food/retrieve.php";
+        String login_url= "http://192.168.43.221/retrieve1.php";
+      //  String login_url= "http://192.168.43.201/food/retrieve.php";
         if(true){
             try {
 
